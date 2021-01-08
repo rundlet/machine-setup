@@ -38,17 +38,17 @@ compaudit | xargs chmod g-w,o-w
 
 # Add to .zshrc
 cd ~/.oh-my-zsh/custom
-code aliases.zsh
 
 ## TODO generate an alias file and function file
-# alias ..="cd .."
-# alias hs='history | grep'
-# alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
-# alias myip="curl http://ipecho.net/plain; echo"
-# alias ohmyzsh-aliases="code ~/.oh-my-zsh/custom/aliases.zsh"
-# alias ohmyzsh-functions="code ~/.oh-my-zsh/custom/functions.zsh"
-# alias ohmyzsh="code ~/.oh-my-zsh"
-# alias reload-zsh="source ~/.zshrc"
-# alias zshconfig="code ~/.zshrc"
+echo 'alias ..="cd .."' >> aliases.zsh
+echo 'alias hs="history | grep"' >> aliases.zsh
+echo 'alias myip="curl http://ipecho.net/plain; echo"' >> aliases.zsh
+echo 'alias ohmyzsh-aliases="code ~/.oh-my-zsh/custom/aliases.zsh"' >> aliases.zsh
+echo 'alias ohmyzsh-functions="code ~/.oh-my-zsh/custom/functions.zsh"' >> aliases.zsh
+echo 'alias ohmyzsh="code ~/.oh-my-zsh"' >> aliases.zsh
+echo 'alias reload-zsh="source ~/.zshrc"' >> aliases.zsh
+echo 'alias zshconfig="code ~/.zshrc"' >> aliases.zsh
+# TODO add made and cd a directory: echo 'alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '' >> aliases.zsh
+
 # code functions.zsh
 # cll() { ls -AlhG "$@" | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/\[rwx\]/)\*2^(8-i));if(k)printf(" %0o ",k);print}' | cut -c 1-5,21-; }
