@@ -1,2 +1,2 @@
-# osx-setup
-Simplifying my new mac setup process
+# workstation-setup
+Simplifying my setup process on various workstations
