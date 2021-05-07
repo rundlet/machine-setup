@@ -3,8 +3,17 @@ echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
 echo 'deltarpm=true' | sudo tee -a /etc/dnf/dnf.conf
 cat /etc/dnf/dnf.conf
 
+
 sudo dnf upgrade --refresh
+sudo dnf check
+sudo dnf autoremove
+sudo fwupdmgr get-devices
+sudo fwupdmgr refresh --force
+sudo fwupdmgr get-updates
+sudo fwupdmgr update
+sudo reboot now
 sudo dnf groupupdate core
+
 sudo dnf install -y rpmfusion-free-release-tainted
 sudo dnf install -y rpmfusion-nonfree-release-tainted 
 sudo dnf install -y dnf-plugins-core
@@ -16,7 +25,6 @@ sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-r
 sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install -y gnome-tweak-tool
 
-sudo dnf install -y util-linux-user
 sudo dnf config-manager --set-enabled google-chrome
 sudo dnf install -y google-chrome-stable
 
@@ -31,10 +39,12 @@ sudo dnf install -y vlc
 sudo dnf install -y qbittorrent 
 sudo dnf install -y fira-code-fonts 'mozilla-fira*' 'google-roboto*'
 
-sudo dnf install -y fish
-chsh -s $(which fish)
+sudo dnf install -y fish util-linux-user
 sudo dnf install -y curl
+chsh -s $(which fish)
 curl -L https://get.oh-my.fish | fish
+mkdir -p /home/$USER/.local/bin
+set -Ua fish_user_paths /home/$USER/.local/bin
 
 sudo dnf install -y tlp tlp-rdw
 sudo systemctl enable tlp
