@@ -54,12 +54,12 @@ gsettings set org.gnome.desktop.interface text-scaling-factor 1.5
 
 # install all the random apps that I just need
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo flatpack install -y flathub com.visualstudio.code
-sudo flatpack install -y flathub md.obsidian.Obsidian
-sudo flatpack install -y flathub us.zoom.Zoom
-sudo flatpack install -y flathub com.slack.Slack
-sudo flatpack install -y flathub org.videolan.VLC
-sudo flatpack install -y flathub org.qbittorrent.qBittorrent
+sudo flatpak install -y flathub com.visualstudio.code
+sudo flatpak install -y flathub md.obsidian.Obsidian
+sudo flatpak install -y flathub us.zoom.Zoom
+sudo flatpak install -y flathub com.slack.Slack
+sudo flatpak install -y flathub org.videolan.VLC
+sudo flatpak install -y flathub org.qbittorrent.qBittorrent
 
 # install nvim and get it configured
 sudo dnf copr enable agriffis/neovim-nightly
